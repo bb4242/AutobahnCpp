@@ -42,6 +42,7 @@ if env['CXX'].startswith('g++'):
                           '-Wno-deprecated-declarations',
                           '-Wno-unused-local-typedefs',
                           '-Wl,--no-as-needed',
+			  '-DMSGPACK_USE_LEGACY_NAME_AS_FLOAT',
                           '-pthread'])
 
    env.Append(LINKFLAGS = ['-pthread'])
@@ -57,6 +58,7 @@ elif env['CXX'].startswith('clang++'):
                           '-pedantic',
                           '-Wno-unused-value',
                           '-Wno-deprecated',
+			  '-DMSGPACK_USE_LEGACY_NAME_AS_FLOAT',
                           '-pthread'])
 
    env.Append(LINKFLAGS = ['-stdlib=libc++', '-pthread'])
